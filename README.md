@@ -1,5 +1,7 @@
 # Agent Activity Kit
 
+**[Live demo →](https://agent-activity-kit.vercel.app)**
+
 Small, carefully animated React components for showing what an AI agent is doing: streaming answers, tool calls, multi-step plans, approvals, undo and recovery.
 
 The goal is to make automation feel **trustworthy**: every state change is visible, explained and, where it matters, reversible.
