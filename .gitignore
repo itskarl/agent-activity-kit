@@ -8,3 +8,4 @@ next-env.d.ts
 
 # Draft case study for karlrodulfo.com, kept local
 WRITEUP.md
+dist
