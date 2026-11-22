@@ -1,6 +1,8 @@
 import { AgentRun } from "@/demo/AgentRun";
 import { DemoShell } from "@/demo/DemoShell";
 import { Sections } from "@/demo/Sections";
+import { CodePanel } from "@/demo/CodePanel";
+import { loadCode } from "@/demo/code";
 
 const principles = [
   {
@@ -21,7 +23,8 @@ const principles = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const code = await loadCode();
   return (
     <DemoShell>
       <main className="page">
@@ -45,9 +48,12 @@ export default function Home() {
         </header>
 
         <AgentRun />
+        <div className="run-code">
+          <CodePanel tabs={code.run} label="how it fits together" />
+        </div>
 
         <div className="sections">
-          <Sections />
+          <Sections code={code} />
         </div>
 
         <section className="principles" id="principles" aria-labelledby="principles-title">

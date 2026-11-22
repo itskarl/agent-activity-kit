@@ -16,6 +16,8 @@ import {
   type ToolStatus,
 } from "@/kit";
 import { FileIcon, GlobeIcon, SearchIcon, UndoIcon } from "@/kit/icons";
+import type { CodeTab } from "./code";
+import { CodeContext, CodePanel, useCode } from "./CodePanel";
 import { duplicateRecords } from "./data";
 import { runScript, streamChunks } from "./sim";
 
@@ -38,6 +40,7 @@ function Section({
   replayLabel?: string;
   children: ReactNode;
 }) {
+  const code = useCode(id);
   return (
     <section className="section" id={id} aria-labelledby={`${id}-title`}>
       <div className="section__intro">
@@ -50,12 +53,15 @@ function Section({
           ))}
         </ul>
       </div>
-      <div className="stage">
-        <button type="button" className="stage__replay" onClick={onReplay}>
-          <UndoIcon size={13} />
-          {replayLabel}
-        </button>
-        <div className="stage__inner">{children}</div>
+      <div className="section__demo">
+        <div className="stage">
+          <button type="button" className="stage__replay" onClick={onReplay}>
+            <UndoIcon size={13} />
+            {replayLabel}
+          </button>
+          <div className="stage__inner">{children}</div>
+        </div>
+        {code && <CodePanel tabs={code} />}
       </div>
     </section>
   );
@@ -410,15 +416,15 @@ function ErrorSection() {
   );
 }
 
-export function Sections() {
+export function Sections({ code }: { code: Record<string, CodeTab[]> }) {
   return (
-    <>
+    <CodeContext.Provider value={code}>
       <StreamingSection />
       <ThinkingSection />
       <ToolSection />
       <TimelineSection />
       <ApprovalSection />
       <ErrorSection />
-    </>
+    </CodeContext.Provider>
   );
 }
