@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
-import { KitProvider, type MotionPreference } from "@/kit";
+import { KitProvider, type MotionPreference } from "agent-activity-kit";
 import { SegmentedControl } from "./SegmentedControl";
 
 type Theme = "system" | "light" | "dark" | "ember";

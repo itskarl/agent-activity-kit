@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { useId } from "react";
-import { spring } from "@/kit/motion";
+import { spring } from "agent-activity-kit";
 
 export function SegmentedControl<T extends string>({
   label,

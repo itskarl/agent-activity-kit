@@ -1,10 +1,12 @@
 /** Usage examples shown in each section's "Show code" panel. */
 
 export const usage: Record<string, string> = {
-  run: `import {
+  run: `// npm i agent-activity-kit motion
+// Once, in your root layout: import "agent-activity-kit/styles.css";
+import {
   ApprovalCard, StepTimeline, StreamingText,
   ThinkingIndicator, ToolCallCard, UndoToast,
-} from "@/kit";
+} from "agent-activity-kit";
 
 export function AgentMessage({ run }: { run: AgentRunState }) {
   return (
@@ -55,7 +57,7 @@ export function AgentMessage({ run }: { run: AgentRunState }) {
   );
 }`,
 
-  streaming: `import { StreamingText } from "@/kit";
+  streaming: `import { StreamingText } from "agent-activity-kit";
 
 export function Answer() {
   const [text, setText] = useState("");
@@ -75,7 +77,7 @@ export function Answer() {
 // Turn pacing off to render chunks as they land:
 <StreamingText text={text} done={done} smooth={false} />`,
 
-  thinking: `import { ThinkingIndicator } from "@/kit";
+  thinking: `import { ThinkingIndicator } from "agent-activity-kit";
 
 <ThinkingIndicator
   active={isThinking}
@@ -89,8 +91,8 @@ export function Answer() {
   doneLabel={(s) => \`Planned in \${s}s\`}
 />`,
 
-  tools: `import { ToolCallCard, ToolResults } from "@/kit";
-import { GlobeIcon, SearchIcon } from "@/kit/icons";
+  tools: `import { ToolCallCard, ToolResults } from "agent-activity-kit";
+import { GlobeIcon, SearchIcon } from "agent-activity-kit/icons";
 
 <ToolCallCard
   icon={<SearchIcon />}
@@ -114,7 +116,7 @@ import { GlobeIcon, SearchIcon } from "@/kit/icons";
   )}
 </ToolCallCard>`,
 
-  timeline: `import { StepTimeline, type TimelineStep } from "@/kit";
+  timeline: `import { StepTimeline, type TimelineStep } from "agent-activity-kit";
 
 const steps: TimelineStep[] = [
   { id: "outline", label: "Draft the outline", status: "done" },
@@ -133,7 +135,7 @@ const steps: TimelineStep[] = [
 // Steps can hold rich content, such as tool calls, once they start:
 { id: "search", label: "Search", status, content: <ToolCallCard … /> }`,
 
-  approval: `import { ApprovalCard, UndoToast, type ApprovalStatus } from "@/kit";
+  approval: `import { ApprovalCard, UndoToast, type ApprovalStatus } from "agent-activity-kit";
 
 export function DeleteDuplicates({ records }: { records: Customer[] }) {
   const [status, setStatus] = useState<ApprovalStatus>("pending");
@@ -170,7 +172,7 @@ export function DeleteDuplicates({ records }: { records: Customer[] }) {
   );
 }`,
 
-  errors: `import { ErrorRetry, type ErrorRetryStatus } from "@/kit";
+  errors: `import { ErrorRetry, type ErrorRetryStatus } from "agent-activity-kit";
 
 const [status, setStatus] = useState<ErrorRetryStatus>("error");
 const [attempt, setAttempt] = useState(1);

@@ -8,4 +8,4 @@ export { UndoToast, type UndoToastProps } from "./UndoToast";
 export { ErrorRetry, type ErrorRetryProps, type ErrorRetryStatus } from "./ErrorRetry";
 export { StatusIcon, type Status } from "./StatusIcon";
 export { AutoHeight } from "./AutoHeight";
-export * as icons from "./icons";
+export { ease, duration, spring, heightTransition } from "./motion";

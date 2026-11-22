@@ -14,8 +14,8 @@ import {
   type ErrorRetryStatus,
   type Status,
   type ToolStatus,
-} from "@/kit";
-import { FileIcon, GlobeIcon, SearchIcon, UndoIcon } from "@/kit/icons";
+} from "agent-activity-kit";
+import { FileIcon, GlobeIcon, SearchIcon, UndoIcon } from "agent-activity-kit/icons";
 import type { CodeTab } from "./code";
 import { CodeContext, CodePanel, useCode } from "./CodePanel";
 import { duplicateRecords } from "./data";

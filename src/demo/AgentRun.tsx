@@ -14,9 +14,9 @@ import {
   type Status,
   type TimelineStep,
   type ToolStatus,
-} from "@/kit";
-import { DatabaseIcon, LayersIcon, UserIcon } from "@/kit/icons";
-import { ease } from "@/kit/motion";
+} from "agent-activity-kit";
+import { DatabaseIcon, LayersIcon, UserIcon } from "agent-activity-kit/icons";
+import { ease } from "agent-activity-kit";
 import { answerCancelled, answerConfirmed, answerUndone, duplicateRecords } from "./data";
 import { runScript, streamChunks } from "./sim";
 

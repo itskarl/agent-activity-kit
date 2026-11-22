@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "@/kit/kit.css";
+import "agent-activity-kit/styles.css";
 import "./demo.css";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-sans" });

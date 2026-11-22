@@ -1,0 +1,54 @@
+{
+  "name": "agent-activity-kit",
+  "version": "0.1.0",
+  "description": "Animated, accessible React components for showing what an AI agent is doing.",
+  "keywords": [
+    "react",
+    "ai",
+    "agent",
+    "components",
+    "motion",
+    "streaming",
+    "accessibility",
+    "design-system"
+  ],
+  "license": "MIT",
+  "author": "Karl Rodulfo",
+  "homepage": "https://agent-activity-kit.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itskarl/agent-activity-kit.git",
+    "directory": "packages/kit"
+  },
+  "bugs": "https://github.com/itskarl/agent-activity-kit/issues",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "import": "./dist/icons.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "peerDependencies": {
+    "motion": ">=12",
+    "react": ">=18",
+    "react-dom": ">=18"
+  }
+}

@@ -2,9 +2,9 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { createContext, useContext, useId, useRef, useState, type KeyboardEvent } from "react";
-import { ChevronIcon } from "@/kit/icons";
-import { useReducedMotionPref } from "@/kit";
-import { heightTransition, spring } from "@/kit/motion";
+import { ChevronIcon } from "agent-activity-kit/icons";
+import { useReducedMotionPref } from "agent-activity-kit";
+import { heightTransition, spring } from "agent-activity-kit";
 import type { CodeTab } from "./code";
 
 export const CodeContext = createContext<Record<string, CodeTab[]>>({});

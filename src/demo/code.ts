@@ -19,7 +19,7 @@ const highlight = (code: string, lang: string) =>
 
 /** Highlights each section's usage example and kit source at build time. */
 export async function loadCode(): Promise<Record<string, CodeTab[]>> {
-  const kitDir = path.join(process.cwd(), "src", "kit");
+  const kitDir = path.join(process.cwd(), "packages", "kit", "src");
   const entries = await Promise.all(
     Object.keys(usage).map(async (id) => {
       const tabs: CodeTab[] = [{ label: "Usage", code: usage[id], html: await highlight(usage[id], "tsx") }];

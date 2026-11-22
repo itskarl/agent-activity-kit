@@ -1,3 +1,31 @@
+/* Demo-only brand theme: shows that a theme is just token values. */
+:root[data-theme="ember"] {
+  --ak-radius: 6px;
+  --ak-radius-sm: 4px;
+  --ak-bg: #14100d;
+  --ak-surface: #1d1713;
+  --ak-surface-2: #271f19;
+  --ak-border: #362b23;
+  --ak-border-strong: #4a3b30;
+  --ak-text: #f5ece3;
+  --ak-text-muted: #b9a898;
+  --ak-text-faint: #85766a;
+  --ak-accent: #ff7a45;
+  --ak-accent-soft: rgb(255 122 69 / 0.14);
+  --ak-on-accent: #1a0e07;
+  --ak-success: #b5e550;
+  --ak-success-soft: rgb(181 229 80 / 0.12);
+  --ak-danger: #ff6b6b;
+  --ak-danger-soft: rgb(255 107 107 / 0.1);
+  --ak-warning: #ffc857;
+  --ak-warning-soft: rgb(255 200 87 / 0.12);
+  --ak-shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 8px 24px -12px rgb(0 0 0 / 0.65);
+  --ak-shadow-lg: 0 2px 6px rgb(0 0 0 / 0.4), 0 18px 40px -14px rgb(0 0 0 / 0.75);
+  color-scheme: dark;
+}
+
+:root[data-theme="ember"] .ak-btn--danger { color: #1a0e07; }
+
 *,
 *::before,
 *::after {
@@ -536,3 +564,26 @@ code { font-family: var(--ak-font-mono); font-size: 0.92em; }
 }
 .section__demo { grid-template-columns: minmax(0, 1fr); }
 .code-panel, .code-panel__frame, .code-view { min-width: 0; }
+
+.install {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 24px;
+}
+.install code {
+  padding: 8px 12px;
+  border-radius: var(--ak-radius-sm);
+  border: 1px solid var(--ak-border);
+  background: var(--ak-surface);
+  font: 400 13px/1 var(--ak-font-mono);
+  color: var(--ak-text);
+  user-select: all;
+}
+.install a {
+  font: 500 13.5px/1 var(--ak-font-sans);
+  color: var(--ak-text-muted);
+  text-underline-offset: 3px;
+}
+.install a:hover { color: var(--ak-text); }

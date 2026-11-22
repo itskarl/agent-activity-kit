@@ -36,6 +36,11 @@ export default async function Home() {
             multi-step plans, approvals, undo and recovery. Built to make automation feel trustworthy, accessible from the
             first commit, and themed entirely with design tokens.
           </p>
+          <div className="install">
+            <code>npm i agent-activity-kit motion</code>
+            <a href="https://github.com/itskarl/agent-activity-kit">GitHub</a>
+            <a href="https://www.npmjs.com/package/agent-activity-kit">npm</a>
+          </div>
           <nav className="toc" aria-label="Components">
             <a href="#streaming">Streaming</a>
             <a href="#thinking">Thinking</a>
